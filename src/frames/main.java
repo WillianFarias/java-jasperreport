@@ -298,6 +298,8 @@ public class main extends JFrame {
 				dados[2] = rs.getString(3);
 				dados[3] = rs.getString(4);
 				dados[4] = rs.getString(5);
+				
+				modelo.addRow(dados);
 			}
 
 			table.setModel(modelo);
