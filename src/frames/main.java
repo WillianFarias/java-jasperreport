@@ -98,6 +98,19 @@ public class main extends JFrame {
 						.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 306, GroupLayout.PREFERRED_SIZE)));
 
 		table = new JTable();
+		table.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				int fila = table.getSelectedRow();
+				
+				txtId.setText(table.getValueAt(fila, 0).toString());
+				txtNome.setText(table.getValueAt(fila, 1).toString());
+				txtSobrenome.setText(table.getValueAt(fila, 2).toString());
+				txtAdress.setText(table.getValueAt(fila, 3).toString());
+				txtFone.setText(table.getValueAt(fila, 4).toString());
+			}
+		});
+		
 		table.setModel(new DefaultTableModel(new Object[][] {},
 				new String[] { "ID", "Nome", "Sobrenome", "Endere\u00E7o", "Fone" }) {
 			Class[] columnTypes = new Class[] { String.class, String.class, String.class, String.class, String.class };
