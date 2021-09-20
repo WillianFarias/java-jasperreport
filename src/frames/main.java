@@ -189,9 +189,9 @@ public class main extends JFrame {
 				
 				try {
 					PreparedStatement ps = cn.prepareStatement("UPDATE empregado"
-							+ " SET name='" + txtNome.getText() + "',surname='"+txtSobrenome.getText() + ",andress='" + 
-							txtAdress.getText() + ",fone='" + txtFone.getText() + "WHERE id='" + txtId.getText()+"'");
-					
+							+ " SET name='" + txtNome.getText() + "',surname='"+txtSobrenome.getText() + "',andress='" + 
+							txtAdress.getText() + "',fone='" + txtFone.getText() + "' WHERE id=" + txtId.getText());
+					System.out.println(ps);
 					int resp = ps.executeUpdate();
 					
 					if (resp > 0) {
@@ -202,7 +202,7 @@ public class main extends JFrame {
 						JOptionPane.showMessageDialog(null, "Erro ao atualizar!");
 					}
 				} catch (SQLException e) {
-					System.err.println("Erro ao atualizar");
+					System.err.println("Erro ao atualizar, exececao sql");
 					JOptionPane.showMessageDialog(null, "Erro ao atualizar");
 				}
 			}
